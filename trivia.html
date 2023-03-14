@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sports Trivia Quiz</title>
+    <link rel="stylesheet" href="sport.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="sport.html"><img src="pngegg.PNG" alt="My Sport Logo"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="news.html">NEWS</a></li>
+          <li><a href="football.html">FOOTBALL</a></li>
+          <li><a href="tennis.html">TENNIS</a></li>
+          <li><a href="mma.html">MMA</a></li>
+          <li><a href="wwe.html">WWE</a></li>
+          <li><a href="basketball.html">BASKETBALL</a></li>
+          <li><a href="trivia.html">TRIVIA</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Sports Trivia Quiz</h1>
+      <p>Test your knowledge of sports with this quiz!</p>
+      <form onsubmit="return checkAnswers()">
+        <h2>Question 1:</h2>
+        <p>What country won the 2018 FIFA World Cup?</p>
+        <label>
+          <input type="radio" name="q1" value="a"> a. France
+        </label><br>
+        <label>
+          <input type="radio" name="q1" value="b"> b. Germany
+        </label><br>
+        <label>
+          <input type="radio" name="q1" value="c"> c. Brazil
+        </label><br>
+        <br>
+        <h2>Question 2:</h2>
+        <p>Which tennis player has won the most Grand Slam singles titles?</p>
+        <label>
+          <input type="radio" name="q2" value="a"> a. Rafael Nadal
+        </label><br>
+        <label>
+          <input type="radio" name="q2" value="b"> b. Novak Djokovic
+        </label><br>
+        <label>
+          <input type="radio" name="q2" value="c"> c. Roger Federer
+        </label><br>
+        <br>
+        <h2>Question 3:</h2>
+        <p>What city hosted the 2020 Summer Olympics?</p>
+        <label>
+          <input type="radio" name="q3" value="a"> a. Tokyo
+        </label><br>
+        <label>
+          <input type="radio" name="q3" value="b"> b. Beijing
+        </label><br>
+        <label>
+          <input type="radio" name="q3" value="c"> c. Rio de Janeiro
+        </label><br>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </main>
+    <footer>
+      <!-- Footer content goes here -->
+    </footer>
+    <script>
+      function checkAnswers() {
+        // Get the user's answers
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+// select the form and attach an event listener to it
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
+
+// function to handle form submission
+function handleSubmit(event) {
+event.preventDefault(); // prevent form from submitting and refreshing the page
+// select all the radio buttons and store them in an array
+const radioButtons = Array.from(document.querySelectorAll('input[type="radio"]'));
+
+// count the number of correct answers
+let correctAnswers = 0;
+if (radioButtons[0].checked) correctAnswers++;
+if (radioButtons[4].checked) correctAnswers++;
+if (radioButtons[6].checked) correctAnswers++;
+
+// display the result in an alert message
+alert(`You got ${correctAnswers} out of 3 questions correct.`);
+}
+}
+</script>
+
+</body>
+</html>
+       
+
+
+
+
